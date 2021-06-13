@@ -1,0 +1,130 @@
+.card {
+    width: 500px;
+    margin: 50px auto auto auto;
+  }
+  
+.expandable-content {
+    overflow: hidden;
+}
+
+
+mat-card {
+    background-color: #0f256d;
+    color: white;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.temp {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.temp-cites
+{
+    font-size: 36px;
+    font-weight: 500;
+    width: 40%;
+    float: left;
+    padding-top: 10%;
+    padding-left: 5%;
+    margin-right: 20px;
+}
+
+
+.col-md-12{
+    width: 100%;
+    float: left;
+}
+
+.col-md-6 {
+    width: 60%;
+    float: left;
+}
+
+.col-md-4 {
+    width: 40%;
+    float: left;
+}
+
+.temp-elements{
+    max-height: 100px;
+    width: 60%;
+}
+
+.align-center{
+    text-align: center;
+}
+
+.temp{
+    width: 40%;
+    float: left;
+    padding-top: 10%;
+    padding-left: 5%;
+    margin-right: 20px;
+}
+
+.icon {
+    width: 40%;
+    float: left;
+    height: 100px;
+}
+
+.icon img{
+    width: 100%;
+}
+
+.description {
+    width: 100%;
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.temp-left span{
+    opacity: 0.8;
+}
+
+.max .mat-icon{
+    color: tomato;
+}
+
+.min .mat-icon{
+    color: #1a1b19;
+}
+
+.container-wether{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#ver-mas span{
+    color: #8f94b1 !important;
+    text-decoration: underline !important;
+}
+
+.elements-add{
+    display: flex;
+    padding: 25px;
+}
+.element{
+    width: 33.3%;
+}
+
+.element span {
+    width: 70%;
+    display: block;
+    float: right;
+    font-size: 16px;
+    opacity: 0.6;
+    line-height: 1.5;
+}
+
+.element .text{
+    font-size: 14px;
+    width: 70%;
+    line-height: 1.5;
+    float: right;
+}
