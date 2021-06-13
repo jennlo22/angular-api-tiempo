@@ -21,7 +21,8 @@ export class WeatherTabsComponent implements OnInit {
     title = 'my-app';
     state = 'collapsed';
     breakpoint;
-
+    public isCollapsed = false;
+    
   constructor(public apiDataService: ApiDataService) {
     this.apiDataService.datesApi.subscribe(data=>this.weather = data.list);
     this.apiDataService.datesApi.subscribe(
@@ -29,9 +30,9 @@ export class WeatherTabsComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {
-    this.breakpoint = (window.innerWidth <= 400) ? 1 : 5;
 
+  ngOnInit(): void {
+    this.breakpoint = (window.innerWidth <= 400) ? 1 : 5
   }
 
   toggle(): void {

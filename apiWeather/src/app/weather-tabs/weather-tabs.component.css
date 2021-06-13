@@ -1,22 +1,13 @@
 .card {
     width: 500px;
-    margin: 50px auto auto auto;
+    margin: 30px auto auto auto;
+    background-color:  #0f1d4c80;
+    color: white;
+    padding: 20px;
+    box-shadow: 1px 1px 3px #999;
+    border-radius: 30px;
   }
   
-.expandable-content {
-    overflow: hidden;
-}
-
-
-mat-card {
-    background-color: #0f256d;
-    color: white;
-}
-
-.mat-card-header .mat-card-title {
-    font-size: 30px;
-    margin-top: 20px;
-}
 
 .temp {
     font-size: 50px;
@@ -34,29 +25,9 @@ mat-card {
     margin-right: 20px;
 }
 
-
-.col-md-12{
-    width: 100%;
-    float: left;
-}
-
-.col-md-6 {
-    width: 60%;
-    float: left;
-}
-
-.col-md-4 {
-    width: 40%;
-    float: left;
-}
-
 .temp-elements{
     max-height: 100px;
-    width: 60%;
-}
-
-.align-center{
-    text-align: center;
+    width: 70%;
 }
 
 .temp{
@@ -68,9 +39,9 @@ mat-card {
 }
 
 .icon {
-    width: 40%;
+    width: 45%;
     float: left;
-    height: 100px;
+    height: 135px;
 }
 
 .icon img{
@@ -81,6 +52,7 @@ mat-card {
     width: 100%;
     font-size: 16px;
     opacity: 0.8;
+    text-align: center;
 }
 
 .temp-left span{
@@ -127,4 +99,17 @@ mat-card {
     width: 70%;
     line-height: 1.5;
     float: right;
+}
+
+body{
+    background-color: chocolate;
+}
+
+
+.cards:first-child{
+    width: 100% !important;
+}
+
+.card-header h1{
+    font-size: 36px !important;
 }
