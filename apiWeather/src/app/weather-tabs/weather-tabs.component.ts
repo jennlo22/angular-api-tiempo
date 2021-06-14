@@ -14,9 +14,6 @@ export class WeatherTabsComponent implements OnInit {
 
   constructor(public apiDataService: ApiDataService) {
     this.apiDataService.datesApi.subscribe(data=>this.weather = data.list);
-    this.apiDataService.datesApi.subscribe(
-      message => console.log(message.list)
-    );
   }
 
 

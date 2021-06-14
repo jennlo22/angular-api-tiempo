@@ -1,68 +1,69 @@
-<div class="container">            
-    <div class="col-sm-6 cards" *ngFor="let wea of weather; let i = index">
-              <div class="card">
-                <div class="card-header" id="heading{{i}}">
-                            <h1>{{wea.name}}</h1>
-                            <div class="container-wether">
-                                <div class="temp-elements">
-                                    <div class="temp">
-                                        <span> {{wea.main.temp}}°</span>
+<div class="container"> 
+    <div class="row">           
+        <div class="col-sm-6 cards col-xs-12" *ngFor="let wea of weather; let i = index">
+                <div class="card">
+                    <div class="card-header" id="heading{{i}}">
+                                <h1>{{wea.name}}</h1>
+                                <div class="container-wether">
+                                    <div class="temp-elements">
+                                        <div class="temp">
+                                            <span> {{wea.main.temp}}°</span>
+                                        </div>
+                                        <div class="icon">
+                                            <img mat-card-image src="http://openweathermap.org/img/wn/{{wea.weather[0].icon}}@2x.png">
+                                        </div>
+                                        <div class="description align-center">
+                                            {{wea.weather[0].description}}
+                                        </div>
                                     </div>
-                                    <div class="icon">
-                                        <img mat-card-image src="http://openweathermap.org/img/wn/{{wea.weather[0].icon}}@2x.png">
+                                <div class="temp-medid">
+                                    <div class="temp-left max">
+                                        <mat-icon>arrow_drop_up</mat-icon>
+                                        <div class="temp-max">
+                                            {{wea.main.temp_max}}°
+                                        </div>
+                                        <span>Temperatura Alta</span>
                                     </div>
-                                    <div class="description align-center">
-                                        {{wea.weather[0].description}}
+                                
+                                    <div class="temp-left min">
+                                        <mat-icon>arrow_drop_down</mat-icon>
+                                        <div class="temp-min">
+                                            {{wea.main.temp_min}}°
+                                        </div>
+                                        <span>Temperatura Baja</span>
                                     </div>
-                                </div>
-                            <div class="temp-medid">
-                                <div class="temp-left max">
-                                    <mat-icon>arrow_drop_up</mat-icon>
-                                    <div class="temp-max">
-                                        {{wea.main.temp_max}}°
-                                    </div>
-                                    <span>Temperatura Alta</span>
-                                </div>
-                            
-                                <div class="temp-left min">
-                                    <mat-icon>arrow_drop_down</mat-icon>
-                                    <div class="temp-min">
-                                        {{wea.main.temp_min}}°
-                                    </div>
-                                    <span>Temperatura Baja</span>
-                                </div>
 
+                                </div>
+                            </div>
+                    <h5 class="mb-0">
+                        <button class="btn btn-link"  data-toggle="collapse" [attr.data-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i" >
+                        Ver más
+                        </button>
+                    </h5>
+                    </div>
+                    <div id="collapse{{i}}" class="collapse">
+                    <div class="card-body">
+                        <div class="elements-add">
+                            <div class="element">
+                                <mat-icon>wb_sunny</mat-icon>
+                                <span>Viento </span>
+                                <div class="text">{{wea.wind.speed}} km/h</div>
+                            </div>
+                            <div class="element">
+                                <mat-icon> edit_location</mat-icon>
+                                <span>Humedad</span>
+                                <div class="text">{{wea.main.humidity}}%</div>
+                            </div>
+                            <div class="element">
+                                <mat-icon> my_location</mat-icon>
+                                <span>Presión</span>
+                                <div class="text">{{wea.main.pressure}} mbar</div>
                             </div>
                         </div>
-                  <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" [attr.data-target]="'#collapse' + i" aria-expanded="false" [attr.aria-controls]="'collapse' + i" >
-                     Ver más
-                    </button>
-                  </h5>
-                </div>
-                <div id="collapse{{i}}" class="collapse" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
-                  <div class="card-body">
 
-                    <div class="elements-add">
-                        <div class="element">
-                            <mat-icon>wb_sunny</mat-icon>
-                            <span>Viento </span>
-                            <div class="text">{{wea.wind.speed}} km/h</div>
-                        </div>
-                        <div class="element">
-                            <mat-icon> edit_location</mat-icon>
-                            <span>Humedad</span>
-                            <div class="text">{{wea.main.humidity}}%</div>
-                        </div>
-                        <div class="element">
-                            <mat-icon> my_location</mat-icon>
-                            <span>Presión</span>
-                            <div class="text">{{wea.main.pressure}} mbar</div>
-                        </div>
                     </div>
-
-                  </div>
+                    </div>
                 </div>
-            </div>
+        </div>
     </div>
 </div>

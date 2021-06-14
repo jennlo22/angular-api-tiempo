@@ -1,13 +1,12 @@
 .card {
-    width: 500px;
+    width: 100%;
     margin: 30px auto auto auto;
     background-color:  #0f1d4c80;
     color: white;
     padding: 20px;
     box-shadow: 1px 1px 3px #999;
     border-radius: 30px;
-  }
-  
+}
 
 .temp {
     font-size: 50px;
@@ -53,6 +52,7 @@
     font-size: 16px;
     opacity: 0.8;
     text-align: center;
+    display: inline-block;
 }
 
 .temp-left span{
@@ -107,9 +107,25 @@ body{
 
 
 .cards:first-child{
-    width: 100% !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+.cards:first-child .card{
+    width: 50%;
+}
+
+@media (max-width: 800px) {
+    .cards:first-child .card{
+        width: 100%;
+    }
 }
 
 .card-header h1{
     font-size: 36px !important;
+}
+
+.card-header{
+    border: none;
+    background-color: transparent;
 }

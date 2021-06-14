@@ -15,9 +15,7 @@ import { ChartsModule } from '@progress/kendo-angular-charts';
 import 'hammerjs';
 import { ApiDataGraficService } from './services/api-data-grafic.service';
 import { WeatherGraficComponent } from './weather-grafic/weather-grafic.component';
-
-
-
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -35,8 +33,8 @@ import { WeatherGraficComponent } from './weather-grafic/weather-grafic.componen
     MatDividerModule,
     MatGridListModule,
     MatIconModule,
-    ChartsModule
-    
+    ChartsModule,
+    FormsModule
   ],
   providers: [ApiDataGraficService],
   bootstrap: [AppComponent]

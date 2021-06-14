@@ -28,11 +28,10 @@ export class ApiDataGraficService {
   public results: coords;
   public results2;
   public weatherdat: any[] = [];
-
+  public cordinatesActual;
 
   constructor(private http: HttpClient, public geolocalizationService: GeolocalizationService) { 
-
-
+      this.datesApi = this.coordinateSub.asObservable();
   }
 
 
@@ -63,9 +62,17 @@ export class ApiDataGraficService {
       this.data = await this.getweatherFiveDays();
       this.results2 = this.data.daily;
       this.results2.forEach(function (value) {
+        var dateCon = new Date(value.dt*1000);
+        var day = dateCon.getDate();
+        var month = dateCon.getMonth()+1;
+        var year = dateCon.getFullYear();
+        var dias=["dom", "lun", "mar", "mie", "jue", "vie", "sab"];
+        var dt = new Date(month+' '+day+', '+year+' 12:00:00');
+        let dateConv = dias[dt.getUTCDay()];   
+
         weatherd.push(
           { 
-            month: value.dt, 
+            month: dateConv + '(' + day + '/' + month+')',
             min: value.temp.min, 
             max: value.temp.max 
           });
@@ -74,10 +81,10 @@ export class ApiDataGraficService {
       return await weatherd;
     }
   
-    async getDatosCoordenate(){
+    async getDatosCoordenate(city){
       let respuestica = null;
-      respuestica = await this.requestData('Bogota');
+      respuestica = await this.requestData(city);
       return respuestica;
     }
-  
+
 }

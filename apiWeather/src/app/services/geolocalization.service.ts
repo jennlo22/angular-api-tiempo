@@ -15,6 +15,8 @@ export class GeolocalizationService {
 
   public coordsSubject: Subject<Coordinates> = new Subject<Coordinates>();
   public coordsPromise: Promise<Coordinates>;
+  private coordinatesAll:Coordinates;
+
 
 
   constructor() {
@@ -30,6 +32,13 @@ export class GeolocalizationService {
     });
   }
 
+  setCordinates(valor){
+    this.coordinatesAll = valor;
+  }
+
+  getCordinates(){
+    return this.coordinatesAll;
+  }
 
   getGeolo(): Promise<Coordinates> {
     return new Promise((res, rej) => {

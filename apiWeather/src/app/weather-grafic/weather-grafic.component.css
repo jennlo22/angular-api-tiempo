@@ -1,0 +1,24 @@
+@media print {
+    kendo-chart {
+      width: 200mm;
+    }
+  }
+
+.data-grafic {
+    padding: 50px;
+    background-color: #0f1d4c80;
+    margin-top: 50px;
+    box-shadow: 1px 1px 3px #999;
+    border-radius: 50px;
+    color: white;
+    text-align: center;
+}
+
+
+.container{
+    padding-bottom: 40px;
+}
+
+.input-group{
+    margin-top: 20px;
+}

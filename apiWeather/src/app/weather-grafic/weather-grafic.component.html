@@ -1,18 +1,35 @@
 <div class="container">
-    <kendo-chart [title]="{ text: 'Pronostico del tiempo' }">
+  <div class="data-grafic">
+    <h2>Prónostico del tiempo por ciudad </h2>
+    <span class="span-grafic">Para cargar información digitá ciudad o un código postal</span>
+    <div class="input-group mb-3 input-group-lg">
+      <input type="text" [(ngModel)]="ciudad" class="form-control" placeholder="Ciudad o Código Postal" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn btn-info" (click)="cargarDatos()" type="button" id="button-addon2">Realizar Búsqueda</button>
+    </div>
+  
+  
+    <kendo-chart [(title)]="title">
         <kendo-chart-series>
           <kendo-chart-series-item
             type="rangeArea"
             [data]="weatherData"
             fromField="min"
             toField="max"
+            monthField="max"
             categoryField="month"
-            [line]="{ style: 'smooth' }"
+            [line]="{ style: 'step' }"
+            color='#17a2b8'
+            margin='100px'
+            spacing='100px'
+            holeSize = '20px'
           >
             <kendo-chart-series-item-labels-from [content]="labelContentFrom">
             </kendo-chart-series-item-labels-from>
             <kendo-chart-series-item-labels-to [content]="labelContentTo">
             </kendo-chart-series-item-labels-to>
+            <kendo-chart-series-item-labels [content]="labelContentMonth">
+            </kendo-chart-series-item-labels>
+            
           </kendo-chart-series-item>
         </kendo-chart-series>
         <kendo-chart-category-axis>
@@ -20,10 +37,13 @@
           </kendo-chart-category-axis-item>
         </kendo-chart-category-axis>
         <kendo-chart-tooltip>
-          <ng-template kendoChartSeriesTooltipTemplate let-value="value">
-            Avg Min Temp : {{ value.from }} °C <br />
-            Avg Max Temp : {{ value.to }} °C"
+          <ng-template kendoChartSeriesTooltipTemplate let-value="value" let-category="category">
+            Día: {{category }}<br />
+            Temp Máx : {{ value.from }} °C  <br />
+            Temp Min : {{ value.to }} °C" 
           </ng-template>
         </kendo-chart-tooltip>
-      </kendo-chart>
+    </kendo-chart>
+  </div>
+  
 </div>
