@@ -3,10 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Coordinates } from '../class/coordinates.structure';
-import { map } from 'rxjs/operators';
-import { DataWeather } from '../class/data-weather.structure';
 import { GeolocalizationService } from '../services/geolocalization.service';
-import { ApiDataGraficService } from './api-data-grafic.service';
 
 @Injectable({ 
   providedIn: 'root'

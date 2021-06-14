@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { ApiDataGraficService } from '../services/api-data-grafic.service';
 import { GeolocalizationService } from '../services/geolocalization.service';
 
@@ -9,7 +10,7 @@ import { GeolocalizationService } from '../services/geolocalization.service';
 })
 export class WeatherGraficComponent implements OnInit {
 
-  constructor(public apiDataGraficService: ApiDataGraficService) { }
+  constructor(public apiDataGraficService: ApiDataGraficService, private gtmService: GoogleTagManagerService) { }
   public weatherData;
   public ciudad = 'Medellin';
   public title = 'Prónostico del tiempo';
@@ -21,6 +22,16 @@ export class WeatherGraficComponent implements OnInit {
   async cargarDatos(){
     this.weatherData = await this.apiDataGraficService.getDatosCoordenate(this.ciudad);
     this.title =  'Prónostico del tiempo para ' + this.ciudad;
+    this.customEvent1();
+  }
+
+  customEvent1() {
+    const gtmTag1 = {
+      event: 'busqueda_ciudad',
+      ciudad: this.ciudad,
+      temperatura: this.weatherData[0].max
+    };
+    this.gtmService.pushTag(gtmTag1);
   }
 
   public labelContentTo(e: any): string {

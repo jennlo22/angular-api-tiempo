@@ -36,7 +36,10 @@ import { FormsModule } from '@angular/forms';
     ChartsModule,
     FormsModule
   ],
-  providers: [ApiDataGraficService],
+  providers: [
+    ApiDataGraficService,
+    {provide: 'googleTagManagerId',  useValue: 'GTM-PC7BZNT'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
