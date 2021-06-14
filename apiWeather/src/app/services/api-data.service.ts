@@ -31,7 +31,6 @@ export class ApiDataService {
     const args = `?lat=${coordinate.latitud}&lon=${coordinate.longitud}&cnt=5&appid=${environment.key}&lang=sp&units=metric`;
     const url = environment.apiWeather + args;
 
-    console.log(url);
 
     this.http.get(url).subscribe(this.coordinateSub);
   }

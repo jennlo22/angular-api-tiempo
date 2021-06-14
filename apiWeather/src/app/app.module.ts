@@ -11,12 +11,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatIconModule} from '@angular/material/icon';
+import { ChartsModule } from '@progress/kendo-angular-charts';
+import 'hammerjs';
+import { ApiDataGraficService } from './services/api-data-grafic.service';
+import { WeatherGraficComponent } from './weather-grafic/weather-grafic.component';
+
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherTabsComponent
+    WeatherTabsComponent,
+    WeatherGraficComponent
   ],
   imports: [
     BrowserModule,
@@ -26,10 +34,11 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatDividerModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    ChartsModule
     
   ],
-  providers: [],
+  providers: [ApiDataGraficService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

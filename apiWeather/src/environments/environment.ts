@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   apiForescast: 'https://api.openweathermap.org/data/2.5/forecast',
   apiWeather: 'https://api.openweathermap.org/data/2.5/find',
+  apiOneCall: 'https://api.openweathermap.org/data/2.5/onecall',
   key : 'adefa81aa2bce5d67052d9970c77bb9a'
 };
 
