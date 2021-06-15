@@ -34,7 +34,6 @@ export class ApiDataGraficService {
       this.datesApi = this.coordinateSub.asObservable();
   }
 
-
     getCoordenate(base: string = "Medellin"): Promise<any> {
       const args = `?q=${base}&units=imperial&appid=${environment.key}`;
       const url = environment.apiWeather + args;
@@ -61,7 +60,7 @@ export class ApiDataGraficService {
       const weatherd: any[] = [];
       this.data = await this.getweatherFiveDays();
       this.results2 = this.data.daily;
-      this.results2.forEach(function (value) {
+      this.results2.slice(0,5).forEach(function (value) {
         var dateCon = new Date(value.dt*1000);
         var day = dateCon.getDate();
         var month = dateCon.getMonth()+1;

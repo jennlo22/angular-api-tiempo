@@ -26,15 +26,17 @@
 
 .temp-elements{
     max-height: 100px;
-    width: 70%;
+    width: 90%;
+}
+
+.card-body{
+    padding: 0.5rem;
 }
 
 .temp{
-    width: 40%;
+    width: 45%;
     float: left;
     padding-top: 10%;
-    padding-left: 5%;
-    margin-right: 20px;
 }
 
 .icon {
@@ -79,10 +81,13 @@
 
 .elements-add{
     display: flex;
-    padding: 25px;
 }
 .element{
     width: 33.3%;
+}
+
+.temp-medid {
+    text-align: center;
 }
 
 .element span {
